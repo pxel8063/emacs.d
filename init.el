@@ -321,6 +321,7 @@
 
 (leaf exec-path-from-shell
   :straight t
+  :defun exec-path-from-shell-initialize
   :when (memq window-system '(mac ns x))
   :config
   (exec-path-from-shell-initialize))
@@ -1163,12 +1164,14 @@
   (leaf clipetty
     :straight t
     :hook ((after-init-hook . global-clipetty-mode))))
-
-(add-hook 'after-init-hook
-          (lambda ()
-            (require 'server)
-            (unless (server-running-p)
-              (server-start))))
+(leaf server
+  :defun server-running-p
+  :config
+  (add-hook 'after-init-hook
+            (lambda ()
+              (require 'server)
+              (unless (server-running-p)
+                (server-start)))))
 
 (provide 'init)
 
