@@ -43,6 +43,12 @@
 
 (straight-use-package 'leaf)
 (straight-use-package 'leaf-keywords)
+
+(require 'leaf-keywords)
+;;; Suppress warning
+;;  In toplevel form:
+;;        init.el:48:1:Error: leaf: Unrecognized keyword :straight
+
 (leaf-keywords-init)
 
 (leaf hydra :straight t)
