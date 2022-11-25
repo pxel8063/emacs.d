@@ -75,14 +75,6 @@
   '(
     (org-fold-core-style . 'overly) ;; need to be set before loading Org
     (js-indent-level . 2)
-    (tool-bar-mode          . nil)
-    (menu-bar-mode          . nil)
-    (truncate-lines         . t)
-    (fill-column . 79)
-    (inhibit-startup-screen . t)
-    (visible-bell . t)
-    (ring-bell-function . 'ignore)
-    (desktop-save-mode        . nil)
     (save-abbrevs . nil)
     (mail-host-address . "gmail.com")
     (send-mail-function . (quote sendmail-send-it))
@@ -333,10 +325,6 @@
 
 (leaf midnight
   :custom ((clean-buffer-list-delay-general . 1)))
-
-(leaf scroll-bar-mode*
-  :config
-  (set-scroll-bar-mode nil))
 
 (leaf show-paren-mode
   :custom((show-paren-style . 'mixed))
@@ -1164,6 +1152,29 @@
   (leaf clipetty
     :straight t
     :hook ((after-init-hook . global-clipetty-mode))))
+
+(leaf editor-setup*
+  :custom
+    (fill-column . 79)
+    (inhibit-startup-screen . t)
+    (ring-bell-function . 'ignore)
+    (visible-bell . t)
+    (truncate-lines         . t)
+    :config
+    (leaf desktop-save-mode*
+      :config
+      (desktop-save-mode nil))
+    (leaf tool-bar-mode*
+      :config
+      (tool-bar-mode -1))
+    (leaf menu-bar-mode*
+      :config
+      (menu-bar-mode -1))
+    (leaf scroll-bar-mode*
+      :defun scroll-bar-mode
+      :config
+      (scroll-bar-mode -1)))
+
 (leaf server
   :defun server-running-p
   :config
