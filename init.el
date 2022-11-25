@@ -1171,6 +1171,7 @@
       :config
       (menu-bar-mode -1))
     (leaf scroll-bar-mode*
+      :defun scroll-bar-mode
       :config
       (scroll-bar-mode -1)))
 
