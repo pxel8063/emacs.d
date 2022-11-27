@@ -2,6 +2,7 @@
 compile:
 	eldev clean elc
 	eldev -C --unstable -a -dtT compile
+	eldev -dtT -C compile --set all
 
 .PHONY: clean
 clean:
@@ -17,8 +18,9 @@ lint:
 
 .PHONY: test
 test:
-	eldev exec t
 	eldev -C --unstable -a -dtT test
+        eldev -p -dtT -C test
+	eldev exec t
 
 startup: init.el
 	bash test-startup.sh
