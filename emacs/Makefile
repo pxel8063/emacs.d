@@ -19,7 +19,7 @@ lint:
 .PHONY: test
 test:
 	eldev -C --unstable -a -dtT test
-        eldev -p -dtT -C test
+	eldev -p -dtT -C test
 	eldev exec t
 
 startup: init.el
