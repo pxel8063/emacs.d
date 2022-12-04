@@ -73,7 +73,6 @@
 (leaf cus-starup
   :custom
   '(
-    (org-fold-core-style . 'overly) ;; need to be set before loading Org
     (js-indent-level . 2)
     (save-abbrevs . nil)
     (mail-host-address . "gmail.com")
