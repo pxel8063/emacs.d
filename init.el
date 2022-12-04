@@ -1132,6 +1132,7 @@
 
 (leaf org-fc
   :require t org-fc-hydra
+  :disabled t
   :when (string= system-type 'darwin)
   :load-path "~/.emacs.d/lisp/org-fc/"
   :custom `((org-fc-directories . '("~/org/"))
