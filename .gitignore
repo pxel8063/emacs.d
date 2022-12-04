@@ -47,6 +47,7 @@
 /.my-private.el
 /*~
 /.emacs.desktop
+/.emacs.desktop.lock
 /elisp/
 /transient/
 /README.el
