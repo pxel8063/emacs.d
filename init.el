@@ -1175,6 +1175,11 @@
       :config
       (scroll-bar-mode -1)))
 
+(leaf ace-link
+  :straight t
+  :config
+  (ace-link-setup-default))
+
 (leaf server
   :defun server-running-p
   :config
