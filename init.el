@@ -1153,6 +1153,9 @@
     :straight t
     :hook ((after-init-hook . global-clipetty-mode))))
 
+(leaf haskell-mode
+  :straight t)
+
 (leaf editor-setup*
   :custom
     (fill-column . 79)
