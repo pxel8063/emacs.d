@@ -662,6 +662,7 @@
   :config
   (org-babel-do-load-languages
    'org-babel-load-languages '((R . t)
+                               (haskell .t)
                                (dot . t)
                                (shell . t)
                                (ditaa . t))))
