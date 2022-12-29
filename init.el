@@ -357,15 +357,9 @@
 
 (leaf savehist  :global-minor-mode t)
 
-(leaf super-save
-  :straight t
+(leaf auto-save-visited
   :global-minor-mode t
-  :blackout super-save-mode
-  :custom
-  (auto-save-default . nil)
-  (super-save-auto-save-when-idle . t)
-  (super-save-idle-duration . 1)
-  (super-save-exclude . '(".gpg")))
+  :custom ((auto-save-visited-interval . 0.8)))
 
 (leaf ddskk-posframe
   :doc "Show Henkan tooltip for ddskk via posframe"
