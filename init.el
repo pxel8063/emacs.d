@@ -469,7 +469,6 @@
   :defvar org-done-keywords org-todo-keywords-1
   :defvar org-tags-match-list-sublevels org-agenda-restrict-begin
   :straight t
-  :require org-habit
   :preface
 
   (leaf leaf-convert
@@ -599,9 +598,6 @@
 
            ;; Remove completed items from search results
            (org-agenda-skip-timestamp-if-done . t)
-
-           ;; Habit Display
-           (org-habit-graph-column . 60)
 
            (org-agenda-start-on-weekday . 1)
 
